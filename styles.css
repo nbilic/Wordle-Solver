@@ -97,6 +97,7 @@
 
 .letter-box:hover{
     cursor: pointer;
+    background-color: red;
 }
 
 .used-letters-div,.orange-letters-div{
@@ -139,12 +140,14 @@
     bottom: 10px;
     z-index: 100;
     background-color: rgb(181, 159, 59);
-    
 }
 
 .orange-box{
     display: flex;
     align-items: center;
     position: relative;
-   
+}
+
+.orange-letter:hover{
+    cursor:pointer;
 }
