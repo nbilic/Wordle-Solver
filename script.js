@@ -2435,42 +2435,48 @@ const displayOrangeLetters = () => {
 };
 
 const possibleSolutions = () => {
-  let x = arr.filter((el) => {
-    let validWord = true;
-    for (let letter of blackLetters) {
-      if (el.toUpperCase().includes(letter)) {
-        validWord = false;
-        break;
-      }
-    }
-
-    for (let [i, letter] of greenLetters.entries()) {
-      if (letter !== "-") {
-        if (el[i].toUpperCase() !== letter) {
-          validWord = false;
-          break;
-        }
-      }
-    }
-
-    for (let value of orangeLetters) {
-      const letter = value[0];
-      const num = value[1];
-      if (
-        !el.toUpperCase().includes(letter) ||
-        el[+num - 1].toUpperCase() === letter
-      ) {
-        validWord = false;
-        break;
-      }
+  let filteredArray = arr.filter((el) => {
+    let validWord; // if at any point the word proves to be invalid we skip other checks and return nothing
+    validWord = validateBlackLetters(el);
+    if (validWord) {
+      validWord = validateGreenLetters(el);
     }
     if (validWord) {
-      return el;
+      validWord = validateOrangeLetters(el);
     }
+    if (validWord) return el;
   });
-  renderSolutions(x);
+  renderSolutions(filteredArray);
 };
 
+const validateBlackLetters = (word) => {
+  for (let letter of blackLetters) {
+    if (word.toUpperCase().includes(letter)) return false;
+  }
+  return true;
+};
+
+const validateGreenLetters = (word) => {
+  for (let [i, letter] of greenLetters.entries()) {
+    if (letter !== "-") {
+      if (word[i].toUpperCase() !== letter) return false;
+    }
+  }
+  return true;
+};
+
+const validateOrangeLetters = (word) => {
+  for (let value of orangeLetters) {
+    const letter = value[0];
+    const num = value[1];
+    if (
+      !word.toUpperCase().includes(letter) ||
+      word[+num - 1].toUpperCase() === letter
+    )
+      return false;
+  }
+  return true;
+};
 const renderSolutions = (arr) => {
   const listOfSolutions = document.querySelector(".solutions-list");
   listOfSolutions.innerText = "";
