@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Red+Hat+Display&family=Roboto:wght@300&family=Secular+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121213 ;
+    font-family: 'Red Hat Display', sans-serif;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+ 
+}
+
+.left-side{
+    width: 70%;
+}
+.right-side{
+    width: 30%;
+    overflow-y: auto;
+    height:95vh;
+    color:white;
+    text-transform: uppercase;
+    padding-left: 10px;
+    border-left: 1px solid rgb(71, 71, 71);
+}
+
+.right-side > h5{
+    font-size: 1.3em;
+    text-align: center;
+    margin: 5px;
+    text-decoration: underline;
+}
+.header{
+    color:white;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    border-bottom: 1px solid rgb(58, 58, 58);
+}
+
+.guess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-letter,.eliminate-letter,.orange-letter{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    background-color: #19191a ;
+    color: whitesmoke;
+    font-size: 2em;
+    margin: 10px;
+    border-radius: 5px;
+    border:none;
+    text-transform: uppercase;
+    outline-color: rgb(199, 10, 10);
+    caret-color: transparent;
+}
+
+.eliminate-letter,.orange-letter{
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+}
+.green-box{
+    background-color: #538D4E;
+}
+.input-letter:focus,.eliminate-letter:focus{
+    outline: none;
+    border:1px solid rgb(255, 255, 255);
+   
+}
+
+.letters,.used-letters,.orange-letters{
+    display: flex;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.letter-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    margin: 0px 5px;
+    background-color: #19191a ;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.letter-box:hover{
+    cursor: pointer;
+}
+
+.used-letters-div,.orange-letters-div{
+    display: flex;
+    align-items: center;
+}
+
+.used-letters-div > h5,.orange-letters-div > h5{
+    color:white;
+    font-size: 1.5em;
+    margin: 0px 10px;
+}
+
+
+.word{
+    margin: 5px;
+    font-size: 1.3em;
+}
+
+.orange-letter{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(181, 159, 59);
+    color: whitesmoke;
+    font-size: 2em;
+    margin: 10px;
+    border-radius: 5px;
+    border:none;
+    text-transform: uppercase;
+    outline-color: rgb(199, 10, 10);
+    caret-color: transparent;
+}
+
+.orange-number{
+    position:absolute;
+    font-size: .8em;
+    color:rgb(255, 255, 255);
+    right: 15px;
+    bottom: 10px;
+    z-index: 100;
+    background-color: rgb(181, 159, 59);
+    
+}
+
+.orange-box{
+    display: flex;
+    align-items: center;
+    position: relative;
+   
+}
