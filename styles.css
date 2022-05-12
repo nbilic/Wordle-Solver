@@ -18,9 +18,9 @@
 }
 .right-side{
     width: 30%;
-    overflow-y: auto;
+    overflow-y: auto;   
     height:95vh;
-    color:white;
+    color:white;    
     text-transform: uppercase;
     padding-left: 10px;
     border-left: 1px solid rgb(71, 71, 71);
@@ -62,8 +62,8 @@
 }
 
 .eliminate-letter,.orange-letter{
-    width: 50px;
-    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     font-size: 1.5em;
 }
 .green-box{
@@ -79,6 +79,7 @@
     display: flex;
     font-weight: bold;
     margin: 10px;
+    flex-wrap: wrap;
 }
 
 .letter-box{
@@ -109,6 +110,8 @@
     color:white;
     font-size: 1.5em;
     margin: 0px 10px;
+    min-width: 100px;
+    
 }
 
 
@@ -151,3 +154,41 @@
 .orange-letter:hover{
     cursor:pointer;
 }
+
+
+@media only screen and (max-width: 800px) {
+    .container{
+      flex-direction: column;
+    }
+    .right-side,.left-side{
+        width: 100%;    
+
+    }
+
+    .used-letters-div,.orange-letters-div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .used-letters,.orange-letters{
+        width: 100%;
+        justify-content: center;
+       
+    }
+    .letter-box{
+        margin-top: 15px;
+    }
+
+    .solutions-list{
+        display:flex;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        justify-content: center;
+
+    }
+
+    .used-letters{
+        margin-top: -30px;
+    }
+  }
